@@ -28,12 +28,12 @@ See my solution notebook at [P1_Antonia.ipynb](https://github.com/AntoniaSophia/
 ###1. Description of my pipeline
 
 My pipeline consists of the following steps:
-####A Define the grayscaled picture including the gaussian blur
-####B Apply the Canny algorithm with ration 1:3 between lower threshold and higher threshold
-####C Definition of the vertices for the region of interest
-####D Selection of the region of interest
-####E Hough transformation
-####F Overlay of the original picture with the annotations
+#####A Define the grayscaled picture including the gaussian blur
+#####B Apply the Canny algorithm with ration 1:3 between lower threshold and higher threshold
+#####C Definition of the vertices for the region of interest
+#####D Selection of the region of interest
+#####E Hough transformation
+#####F Overlay of the original picture with the annotations
 
 The draw_lines() function is done like that:
 - I know that I have a set of small lines which can be sorted into equivalence classes 
@@ -86,4 +86,4 @@ Unfortunately I had no time to investigate this further but I'm sure that the la
 
 Finally I'm really curious to see what improvements can be done (a later lesson is called "advance lane detection") and what benefits eventually deep learning could give!
 
-To conclude with: I had a lot of fun working on that project and enjoyed very much!! Hope it will continue exactly like that!! :-)
+**To conclude with: I had a lot of fun working on that project and enjoyed very much!! Hope it will continue exactly like that!! :-)**
