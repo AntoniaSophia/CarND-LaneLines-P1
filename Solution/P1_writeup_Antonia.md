@@ -54,8 +54,8 @@ The draw_lines() function is done like that:
 ![whiteCarLaneSwitch_Annotated.jpg][image6]
 
 #####And here are my videos: 
-![White_Annotated][video1]
-![Yellow Annotated][video2]
+- ![White_Annotated][video1]
+- ![Yellow Annotated][video2]
 
 
 ###2. Identify potential shortcomings with your current pipeline
