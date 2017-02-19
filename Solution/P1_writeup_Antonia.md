@@ -64,6 +64,10 @@ Actually I'm not really happy at all about hardcoding the vertices - but it seem
 Although the orientation and angle of the camera doesn't change over time the main prerequisite is that also the horizon level doesn't move.
 This prerequisite is true for flat streets, but is doesn't hold for mountainous roads!
 
+Also other parameters are hardcoded for gaussian blur, Hough transformation and Canny algorithm. I'm sure the test material was selected to fit pretty nice to one fixed parameter set - but what to do in case this doesn't work anymore...!?
+Actually one would need to know the performance of a chosen parameter set and adjust it automatically in case it produces bad results. Sounds pretty complicated to me as currently some human input is given to check the results.
+A really autonomous car mandatorily has to detect itself when the detection performance is bad or slowly degrading....
+
 Another shortcoming is the algorithm of finding equivalence classes. I chose the most simple approach as it was sufficient.
 I haven't tried out the "challenge" until now but I assume there are complex situations contained like more than two road lanes in the picture or "noise".
 With "noise" I mean smaller lines which do not fit to any road lane (e.g. white symbols like arrows on the road)
@@ -89,5 +93,6 @@ No time to identify the reason for this - if I had a simple way of getting exact
 
 
 Finally I'm really curious to see what improvements can be done (a later lesson is called "advance lane detection") and what benefits eventually deep learning could give!
+Especially for the mentioned problem in section 2 of possibly bad parameters for Gauss/Canny/Hough I don't have a real idea how to do this on an algorithmic level which can be executed efficiently (playing around in a brute-force manner and compare results would possibly work in offline mode but definitely not in realtime....)
 
 **To conclude with: I had a lot of fun working on that project and enjoyed very much!! Hope it will continue exactly like that!! :-)**
