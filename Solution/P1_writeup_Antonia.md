@@ -75,6 +75,8 @@ Furthermore I was really struggling whether it is better to do selection of the 
 
 Unfortunately I had no time to investigate this further but I'm sure that the latter can happen easily.
 
+One last issue is visible in the video ![Yellow Annotated][video2]: I have two red nearly horizontal beams coming in only 2 frames (in the middle and at the end of the video). 
+No time to identify the reason for this - if I had a simple way of getting exactly this frame as picture I would further drill down the problem....
 
 
 ###3. Suggest possible improvements to your pipeline
@@ -82,7 +84,9 @@ Unfortunately I had no time to investigate this further but I'm sure that the la
 - At first I would check whether the selection of region should be done before or after the Hough transformation - possibly the most efficient and robust way is to do it before and after the Hough transformation.
 - Secondly the draw_lines function must be improved in order to deal with more than two equivalence classes. Actually a more general function of splitting up line any number of equivalence classes should be implemented. I'm nearly sure that Python has already some functions like, but unfortunately I'm a beginner in Python so I definitely had to investigate further
 - Thirdly I would try to figure out also "noise" in that list of lines, e.g. if we get 5 equivalence classes with let's say 20,18,25,3 and 30 elements this could be an indicator that the equivalence class with 3 elements could be noise (of course also other characteristics like overall length or number of covered pixels of an equivalence class could be a criteria)
+- The problem with the wrong red beams in the video ![Yellow Annotated][video2] mentioned above must be further investigated of course.....
 - At last I would try to figure out what could be done in order to get a better calculation for the region of interest. Possibly using inertial sensors (which are contained in every mobile phone nowadays) could give a hint for orientation of the horizon line.
+
 
 Finally I'm really curious to see what improvements can be done (a later lesson is called "advance lane detection") and what benefits eventually deep learning could give!
 
