@@ -1,7 +1,7 @@
 #**Finding Lane Lines on the Road** 
 
 
-*Antonia Reiter, 19.02.2017*
+**Antonia Reiter, 19.02.2017**
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -10,20 +10,30 @@ The goals / steps of this project are the following:
 
 [image1]: solidWhiteCurve_Annotated.jpg "solidWhiteCurve_Annotated"
 [image2]: solidWhiteRight_Annotated.jpg "solidWhiteRight_Annotated"
+[image3]: solidYellow_Left_Annotated.jpg "solidYellow_Left_Annotated"
+[image4]: solidYellowCurve_Annotated.jpg "solidYellowCurve_Annotated"
+[image5]: solidYellowCurve_Annotated2.jpg "solidYellowCurve_Annotated2"
+[image6]: whiteCarLaneSwitch_Annotated.jpg "whiteCarLaneSwitch_Annotated"
+
+[video1]: white.mp4 "White_Annotated"
+[video2]: yellow.mp4 "Yellow_Annotated"
 
 ---
 
 ### Reflection
 
+See my solution notebook at [P1_Antonia.ipynb](https://github.com/AntoniaSophia/CarND-LaneLines-P1/blob/master/Solution/P1_Antonia.ipynb) 
+
+
 ###1. Description of my pipeline
 
 My pipeline consists of the following steps:
-#A Define the grayscaled picture including the gaussian blur
-#B Apply the Canny algorithm with ration 1:3 between lower threshold and higher threshold
-#C Definition of the vertices for the region of interest
-#D Selection of the region of interest
-#E Hough transformation
-#F Overlay of the original picture with the annotations
+####A Define the grayscaled picture including the gaussian blur
+####B Apply the Canny algorithm with ration 1:3 between lower threshold and higher threshold
+####C Definition of the vertices for the region of interest
+####D Selection of the region of interest
+####E Hough transformation
+####F Overlay of the original picture with the annotations
 
 The draw_lines() function is done like that:
 - I know that I have a set of small lines which can be sorted into equivalence classes 
@@ -35,9 +45,17 @@ The draw_lines() function is done like that:
 - Additionally I calculated the maximum and minimun x-value for both lines in order the really reflect the identified lines. But of course a extrapolation to the bottom of the picture would be somehow trivial
 
 
-Here are some annotated results:
-![alt text][image1]
-![alt text][image2]
+#####Here are some annotated results:
+![solidWhiteCurve_Annotated.jpg][image1]
+![solidWhiteRight_Annotated.jpg][image2]
+![solidYellow_Left_Annotated.jpg][image3]
+![solidYellowCurve_Annotated.jpg][image4]
+![solidYellowCurve_Annotated2.jpg][image5]
+![whiteCarLaneSwitch_Annotated.jpg][image6]
+
+#####And here are my videos: 
+![White_Annotated][video1]
+![Yellow Annotated][video2]
 
 
 ###2. Identify potential shortcomings with your current pipeline
@@ -49,13 +67,13 @@ This prerequisite is true for flat streets, but is doesn't hold for mountainous 
 Another shortcoming is the algorithm of finding equivalence classes. I chose the most simple approach as it was sufficient.
 I haven't tried out the "challenge" until now but I assume there are complex situations contained like more than two road lanes in the picture or "noise".
 With "noise" I mean smaller lines which do not fit to any road lane (e.g. white symbols like arrows on the road)
-Also this algorithm was only applied for examples with perfect weather conditions - I guess factors like wind, rain or even snow (white! *arrrg*) will disturb this algorithm heavily.
+Also this algorithm was only applied for examples with perfect weather conditions - I guess factors like wind, rain or even snow (white! **arrrg**) will disturb this algorithm heavily.
 
 Furthermore I was really struggling whether it is better to do selection of the region of interest before or after the Hough transformation - but seems to work perfectly fine for these examples....
 - possible advantage of doing region selection before: less effort for Hough transformation
 - possible disadvantage of doing region selection before: in case the re-transformation would return lines outside the region of interest I have to apply region selection again
 
-Unfortunately I had no time to investigate this further but I'm sure that this can happen easily.
+Unfortunately I had no time to investigate this further but I'm sure that the latter can happen easily.
 
 
 
